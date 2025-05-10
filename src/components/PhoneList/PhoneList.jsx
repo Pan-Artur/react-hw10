@@ -18,7 +18,7 @@ export class PhoneList extends Component {
                 </div>
 
                 {!hasContacts && <p>No contacts yet.</p>}
-                
+
                 {hasContacts && (
                     <ul>
                         {contacts.map((contact) => (
