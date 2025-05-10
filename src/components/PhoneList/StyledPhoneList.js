@@ -62,7 +62,7 @@ export const StyledPhoneList = styled.div`
     }
 
     p {
-      margin: 0;
+      margin: 0 auto 0 15px;
       color: #2c3e50;
       font-size: 16px;
     }
