@@ -50,6 +50,12 @@ export class App extends Component {
     }));
   }
 
+  loadContacts = (contacts) => {
+    this.setState({
+      contacts
+    });
+  }
+
   render() {
     const { contacts, filter, name, number } = this.state;
 
@@ -71,6 +77,7 @@ export class App extends Component {
           value={filter}
           onChange={this.handleFilterChange}
           onDelete={this.deleteContact}
+          onLoad={this.loadContacts}
         />
       </div>
     );
