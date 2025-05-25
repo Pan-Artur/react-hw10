@@ -20,7 +20,7 @@ export class App extends Component {
   };
 
   addContact = (name, number) => {
-    if (name.trim() === "" || number.trim() === "") {
+    if (!name || !number || name.trim() === "" || number.trim() === "") {
       return;
     }
 
@@ -60,7 +60,7 @@ export class App extends Component {
     const { contacts, filter, name, number } = this.state;
 
     const filteredContacts = contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
+      contact.name && contact.name.toLowerCase().includes(filter.toLowerCase())
     );
 
     return (

@@ -15,7 +15,11 @@ export class PhoneList extends Component {
     const savedContacts = localStorage.getItem("contacts");
 
     if (savedContacts) {
-      this.props.onLoad(JSON.parse(savedContacts));
+      const parsedContacts = JSON.parse(savedContacts);
+
+      const validContacts = parsedContacts.filter((contact) => contact && contact.name && contact.number);
+
+      this.props.onLoad(validContacts);
     }
   }
 
